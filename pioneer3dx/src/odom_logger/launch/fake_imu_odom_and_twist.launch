@@ -1,0 +1,7 @@
+<launch>
+    <node name="fake_imu_odom_and_twist" pkg="odom_logger" type="fake_imu_odom_and_twist" respawn="false" output="screen">
+        <param name = "fake_imu_odom_topic_name" value = "/fake_imu_odom"/>
+	<param name = "fake_twist_topic_name" value = "/fake_cmd_vel"/>
+	<param name = "loop_rate" value = "20"/>
+    </node>
+</launch>

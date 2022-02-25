@@ -1,0 +1,8 @@
+prefix=/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx_simulation/devel
+
+Name: coppeliasim_p3dx_sim
+Description: Description of coppeliasim_p3dx_sim
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx_simulation/devel/lib 
+Requires: 

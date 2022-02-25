@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -shared -Wl,-soname,libgtest.so -o libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx/build/gtest/gtest/src -lpthread -Wl,-rpath,/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx/build/gtest/gtest/src 

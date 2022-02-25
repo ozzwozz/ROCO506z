@@ -1,0 +1,6 @@
+<launch>
+    <node name="fake_imu_odom" pkg="odom_logger" type="fake_imu_odom" respawn="false" output="screen">
+        <param name = "fake_imu_odom_topic_name" value = "/fake_imu_odom"/>
+	<param name = "loop_rate" value = "20"/>
+    </node>
+</launch>

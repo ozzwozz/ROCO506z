@@ -1,0 +1,8 @@
+prefix=/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx/install
+
+Name: p3dx_description
+Description: Description of p3dx_description
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx/install/lib 
+Requires: 
