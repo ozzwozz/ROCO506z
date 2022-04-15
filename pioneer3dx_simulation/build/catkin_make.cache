@@ -1,2 +1,0 @@
-coppeliasim_p3dx_sim
--DCATKIN_DEVEL_PREFIX=/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx_simulation/devel -DCMAKE_INSTALL_PREFIX=/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx_simulation/install -G Unix Makefiles

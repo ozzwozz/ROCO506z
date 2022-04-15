@@ -1,0 +1,8 @@
+<launch>
+	<!-- LAUNCH SIMULATION AS WELL AS ROSCORE-->
+	<include file="~/pioneer3dx_wss/pioneer3dx_simulation/src/coppeliasim_p3dx_sim/launch/coppeliasim_p3dx_sim.launch"/>
+	<!-- LAUNCH RVIZ -->
+	<include file="~/pioneer3dx_wss/pioneer3dx/src/p3dx_description/launch/rviz.launch"/>
+	<!-- LAUNCH 2D SLAM -->
+	<include file="~/pioneer3dx_wss/pioneer3dx_2dslam/src/pioneer3dx_gmapping/launch/pioneer3dx_gmapping.launch"/>
+</launch>

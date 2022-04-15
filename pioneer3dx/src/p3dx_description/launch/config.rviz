@@ -7,8 +7,16 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1/Frames1
+        - /RobotModel1
+        - /RobotModel1/Status1
+        - /Imu1
+        - /Map1
+        - /LaserScan1
+        - /DepthCloud1
+        - /DepthCloud1/Auto Size1
+        - /DepthCloud2/Auto Size1
       Splitter Ratio: 0.5
-    Tree Height: 1480
+    Tree Height: 560
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -27,7 +35,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LaserScan
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -58,7 +66,23 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        bar_bl_joint:
+          Value: true
+        bar_br_joint:
+          Value: true
+        bar_fl_joint:
+          Value: true
+        bar_fr_joint:
+          Value: true
         base_link:
+          Value: true
+        camera_depth_frame:
+          Value: true
+        camera_link:
+          Value: true
+        camera_rgb_frame:
+          Value: true
+        camera_sensor:
           Value: true
         center_hubcap:
           Value: true
@@ -66,7 +90,21 @@ Visualization Manager:
           Value: true
         front_sonar:
           Value: true
+        gyro_link:
+          Value: true
+        joint_back_left_wheel:
+          Value: true
+        joint_back_right_wheel:
+          Value: true
+        joint_front_left_wheel:
+          Value: true
+        joint_front_right_wheel:
+          Value: true
+        laser:
+          Value: true
         lms100:
+          Value: true
+        odom:
           Value: true
         p3dx_left_hubcap:
           Value: true
@@ -75,6 +113,8 @@ Visualization Manager:
         p3dx_right_hubcap:
           Value: true
         p3dx_right_wheel:
+          Value: true
+        summit_xl_a_odom:
           Value: true
         swivel:
           Value: true
@@ -87,23 +127,31 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          front_sonar:
-            {}
-          lms100:
-            {}
-          p3dx_left_wheel:
-            p3dx_left_hubcap:
-              {}
-          p3dx_right_wheel:
-            p3dx_right_hubcap:
-              {}
-          swivel:
+        odom:
+          base_link:
+            camera_link:
+              camera_depth_frame:
+                {}
+              camera_rgb_frame:
+                {}
             center_wheel:
               center_hubcap:
+                swivel:
+                  {}
+            front_sonar:
+              {}
+            gyro_link:
+              {}
+            lms100:
+              {}
+            p3dx_left_wheel:
+              p3dx_left_hubcap:
                 {}
-          top_plate:
-            {}
+            p3dx_right_wheel:
+              p3dx_right_hubcap:
+                {}
+            top_plate:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -177,11 +225,178 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Alpha: 1
+      Class: rviz_plugin_tutorials/Imu
+      Color: 204; 51; 204
+      Enabled: true
+      History Length: 1
+      Name: Imu
+      Queue Size: 10
+      Topic: /imu/data
+      Unreliable: false
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /gmapping
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Flat Squares
+      Topic: /scan
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: true
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
+      Queue Size: 10
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Arrow
+      Topic: /odom
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Auto Size:
+        Auto Size Factor: 1
+        Value: true
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/DepthCloud
+      Color: 255; 255; 255
+      Color Image Topic: ""
+      Color Transformer: ""
+      Color Transport Hint: raw
+      Decay Time: 0
+      Depth Map Topic: /camera/depth_image
+      Depth Map Transport Hint: raw
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: DepthCloud
+      Occlusion Compensation:
+        Occlusion Time-Out: 30
+        Value: false
+      Position Transformer: ""
+      Queue Size: 5
+      Selectable: true
+      Size (Pixels): 3
+      Style: Flat Squares
+      Topic Filter: true
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /camera/rgb_image
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Auto Size:
+        Auto Size Factor: 1
+        Value: true
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/DepthCloud
+      Color: 255; 255; 255
+      Color Image Topic: ""
+      Color Transformer: ""
+      Color Transport Hint: raw
+      Decay Time: 0
+      Depth Map Topic: /camera/depth_image
+      Depth Map Transport Hint: raw
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: DepthCloud
+      Occlusion Compensation:
+        Occlusion Time-Out: 30
+        Value: false
+      Position Transformer: ""
+      Queue Size: 5
+      Selectable: true
+      Size (Pixels): 3
+      Style: Flat Squares
+      Topic Filter: true
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -205,7 +420,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 1.3873989582061768
+      Distance: 21.455764770507812
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -221,17 +436,19 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4453979432582855
+      Pitch: 0.444797158241272
       Target Frame: <Fixed Frame>
-      Yaw: 1.0104247331619263
+      Yaw: 2.6936092376708984
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1854
+  Height: 1016
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000033900000636fc0200000009fb0000000a0049006d006100670065000000006e000000ef0000000000000000fb000000100044006900730070006c006100790073010000006e000006360000018200fffffffb0000001200530065006c0065006300740069006f006e0000000660000000b0000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b2fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f00000636fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000006e000006360000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000556000000d7fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000b6400000060fc0100000002fb0000000800540069006d0065010000000000000b640000057100fffffffb0000000800540069006d00650100000000000004500000000000000000000006b40000063600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Image:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd00000004000000000000033900000338fc020000000bfb0000000a0049006d006100670065000000006e000000ef0000000000000000fb000000100044006900730070006c006100790073010000003d0000026d000000c900fffffffb0000001200530065006c0065006300740069006f006e0000000660000000b00000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b2fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006100000002b0000000c50000000000000000fb0000000a0049006d00610067006501000002b0000000c50000001600ffffff000000010000015f00000338fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d00000338000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000556000000d7fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073800000060fc0100000002fb0000000800540069006d0065010000000000000738000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000002940000033800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -240,6 +457,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 2916
-  X: 398
-  Y: 54
+  Width: 1848
+  X: 72
+  Y: 27

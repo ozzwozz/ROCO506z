@@ -1,8 +1,0 @@
-prefix=/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx/devel
-
-Name: odom_logger
-Description: Description of odom_logger
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/user001/Documents/Oscar/pioneer3dx_wss/pioneer3dx/devel/lib 
-Requires: nav_msgs roscpp rospy std_msgs geometry_msgs message_filters
