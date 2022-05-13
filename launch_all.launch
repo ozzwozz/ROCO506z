@@ -3,6 +3,9 @@
 <launch>
 
 	<include file="$(find coppeliasim_p3dx_sim)/launch/coppeliasim_p3dx_all.launch"/>
-	<!--<include file="$(find pioneer3dx_octomap)/launch/pioneer3dx_octomap.launch"/>-->
+	<include file="$(find pioneer3dx_gmapping)/launch/pioneer3dx_gmapping.launch"/>
+	
+	<include file="$(find pioneer3dx_octomap)/launch/pioneer3dx_octomap.launch"/>
 	
 </launch>
+

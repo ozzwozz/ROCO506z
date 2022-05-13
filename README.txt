@@ -3,7 +3,7 @@ sudo apt-get ros-noetic-gmapping-*
 install octomap
 sudo apt-get install ros-noetic-octomap
 install the pointcloud2 message creator
-git clone https://github.com/marco-teixeira/float32multiarray_to_pointcloud2
+git clone https://github.com/marco-teixeira/float32multiarray_to_pointcloud2.git
 install move_base by running both of the following
 sudo apt install ros-noetic-move-base
 sudo apt install ros-noetic-move-base-*
