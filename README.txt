@@ -7,10 +7,13 @@ git clone https://github.com/marco-teixeira/float32multiarray_to_pointcloud2.git
 install move_base by running both of the following
 sudo apt install ros-noetic-move-base
 sudo apt install ros-noetic-move-base-*
+install the local planner using
+sudo apt-get install ros-noetic-dwa-local-planner
+
 
 source pioneer3dx_sensorfusion/devel/setup.bash --extend
 source pioneer3dx_simulation/devel/setup.bash --extend
 source pioneer3dx_map_and_nav/devel/setup.bash --extend
 source pioneer3dx_2dslam/devel/setup.bash --extend
 source pioneer3dx/devel/setup.bash --extend
-
+source pioneer3dx_movement/devel/setup.bash --extend

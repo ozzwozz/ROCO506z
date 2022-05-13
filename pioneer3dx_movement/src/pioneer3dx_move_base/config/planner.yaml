@@ -1,0 +1,75 @@
+controller_frequency: 5.0
+recovery_behaviour_enabled: true
+
+NavfnROS:
+  # specifies whether or not to allow navf to create plans
+ allow_unknown: true
+ default_tolerance: 0.1 # tolerance on the goal point for the planner
+ visualize_potential: true
+
+
+TrajectoryPlannerROS:
+ # Robot Configuration Parameters
+ acc_lim_x: 2.5
+ acc_lim_theta: 3.2
+ max_vel_theta: 1.0
+ min_vel_theta: -1.0
+ min_in_place_vel_theta: 0.2
+
+ holonomic_robot: false
+ escape_vel: -0.1
+
+ # Goal tolerance Parameters
+ yaw_goal_tolerance: 0.1
+ xy_goal_tolerance: 0.2
+ latch_xy_goal_tolerance: false
+
+ # Forward simulation parameters
+ sim_time: 1.0
+ sim_granularity: 0.02
+ angular_sim_granularity: 0.02
+ vx_samples: 6
+ vtheta_samples: 20
+ controller_frequency: 20.0
+
+ # Trajectory scoring parameters
+ # Wether the gdist_scale and pdist_scale are assumed in meters
+ meter_scoring: true
+ occdist_scale: 0.01 # weighting for obstacle avoidance
+ pdist_scale: 0.75 # weighting for closeness of staying to the path
+ gdist_scale: 1.0 # weighting for goal completion and speed
+
+ heading_lookahead: 0.325 # how far to look ahead when calculating trajectories
+ # scoring based on heading to the path or distance fom the path
+ heading scoring: false
+ heading_scoring_footstep: 0.8 # How far to look ahead in simulated trajectory
+ # whether to use the dynamic window approach or use trajectory rollout
+ dwa: true
+ simple_abstractor: false
+ publish_cost_grid_pc: true
+
+ # oscillation prevention parameters
+ oscillation_reset_dist: 0.25 # distance before oscillation flags are reset
+ escape_reset_dist: 0.1
+ escape_reeset_theta: 0.1
+
+DWAPlannerROS:
+ # Robot configuration parameters
+ acc_lim_x: 2.5
+ acc_lim_y: 0
+ acc_lim_th: 3.2
+
+ max_vel_x: 2.0
+ max_vel_y: 2.0
+ min_vel_x: 0.0
+ min_vel_y: 0.0
+
+ max_trans_vel: 0.5
+ min_tans_vel: 0.1
+ max_rot_vel: 1.0
+ min_rot_val: 0.2
+
+ # Goal Tolerance parameters
+ yaw_goal_tolerance: 0.1
+ xy_goal_tolerance: 0.2
+ latch_xy_goal_tolerance: false
