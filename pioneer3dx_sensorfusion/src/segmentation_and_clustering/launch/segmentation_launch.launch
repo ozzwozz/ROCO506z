@@ -1,0 +1,3 @@
+<launch>
+   <node name="segmentation_and_clustering" pkg="segmentation_and_clustering" type="planar_segmentation_node" respawn="false" output="screen"/>
+</launch>

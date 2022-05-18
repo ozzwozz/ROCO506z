@@ -3,9 +3,17 @@
 <launch>
 
 	<include file="$(find coppeliasim_p3dx_sim)/launch/coppeliasim_p3dx_all.launch"/>
+	<!-- 2D SLAM -->
 	<include file="$(find pioneer3dx_gmapping)/launch/pioneer3dx_gmapping.launch"/>
-	
+	<!-- 3D SLAM -->
 	<include file="$(find pioneer3dx_octomap)/launch/pioneer3dx_octomap.launch"/>
+	<!-- PointCloud and Segmentation -->
+	<include file="$(find float32multiarray_to_pointcloud2)/launch/float32multiarray_to_pointcloud2.launch"/>
+	<include file="$(find segmentation_and_clustering)/launch/segmentation_launch.launch"/>
+	<!-- Graph Based Path Planning, Traversability Graph Planning, Control of Mobile Robot-->
+	<include file="$(find pioneer3dx_move_base)/launch/pioneer3dx_move_base_launch.launch"/>
+	<!-- Keyboard Teleop -->
+	<include file="$(find pioneer3dx_keyboard_teleop)/launch/keyboard_teleop.launch"/>
 	
 </launch>
 
