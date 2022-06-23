@@ -30,6 +30,12 @@ source pioneer3dx_2dslam/devel/setup.bash --extend
 source pioneer3dx/devel/setup.bash --extend
 source pioneer3dx_movement/devel/setup.bash --extend
 
+%The source all file also contains
+source ~/.bashrc
+source /opt/ros/noetic/setup.bash
+%which allow the terminal to find all of the relevent ROS commands
+
+
 %To run everything 1st you will need to catkin make in all of the folders
 
 source source_all.bash
@@ -57,18 +63,22 @@ cd ..
 source source_all.bash
 roscore
 
+%in a new terminal
 %Run Gmapping with
 source source_all.bash
 roslaunch pioneer3dx_2dslam/src/pioneer3dx_gmapping/launch/pioneer3dx_gmapping.launch 
 
+%in a new terminal
 %Then run the simulation with
 source source_all.bash
 roslaunch coppeliasim_p3dx_sim coppeliasim_p3dx_all.launch
 
+%in a new terminal
 %Run Octomap with
 source source_all.bash
 roslaunch pioneer3dx_map_and_nav/src/pioneer3dx_octomap/launch/pioneer3dx_octomap.launch
 
+%in a new terminal
 %Run path planning
 source source_all.bash
 roslaunch pioneer3dx_movement/src/pioneer3dx_move_base/launch/pioneer3dx_move_base_launch.launch
