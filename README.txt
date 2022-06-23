@@ -52,6 +52,7 @@ cd pioneer3dx_simulation
 catkin_make
 cd ..
 
+% The order in which everything is run matters so 1st we need to run Roscore, then Gmapping, then the simulation, then octomap, and then the Path planning.
 %Run RosCore by inputting
 source source_all.bash
 roscore
@@ -60,12 +61,15 @@ roscore
 source source_all.bash
 roslaunch pioneer3dx_2dslam/src/pioneer3dx_gmapping/launch/pioneer3dx_gmapping.launch 
 
-%Run Octomap with
-source source_all.bash
-roslaunch pioneer3dx_map_and_nav/src/pioneer3dx_octomap/launch/pioneer3dx_octomap.launch
-
 %Then run the simulation with
 source source_all.bash
 roslaunch coppeliasim_p3dx_sim coppeliasim_p3dx_all.launch
 
+%Run Octomap with
+source source_all.bash
+roslaunch pioneer3dx_map_and_nav/src/pioneer3dx_octomap/launch/pioneer3dx_octomap.launch
+
+%Run path planning
+source source_all.bash
+roslaunch pioneer3dx_movement/src/pioneer3dx_move_base/launch/pioneer3dx_move_base_launch.launch
 
